@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+#app {
+    background-color: #222d32;
+    height:100%;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color:rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #07335d;
+}
+
+.el-menu .fa {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 24px;
+    text-align: center;
+}
+
+.el-menu .fa:not(.is-children) {
+    font-size: 14px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s ease-in-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+
+.el-submenu.is-active .el-submenu__title,.el-submenu.is-active .el-submenu__title i{color: #fff!important;}
+.el-menu-item.is-active{color: #fff!important;}
+
+/*element样式重定义*/
+
+.el-table .el-table__body tr:hover>td{ background-color: #f5f7fa!important;  }
+
+/*searchcont*/
+.searchcont{background: #f5f7fa;padding: 20px;padding-bottom: 0;border:1px solid #eaeefb;margin-bottom: 20px;border-radius:4px }
+.searchcont .el-select {
+    width: 100%
+}
+
+/*el-message */
+.el-message{z-index: 99999!important;}
+
+.special-select .el-select .el-input {
+    width: 130px;
+}

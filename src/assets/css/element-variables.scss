@@ -1,0 +1,147 @@
+/* 改变主题色变量 green:0b8b7d default:2f4050 red:910000*/
+$--color-primary:#2f4050;
+$--color-danger: #F56C6C;
+$--color-success: #67C23A;
+$--color-info: #909399;
+$--color-warning: #E6A23C;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import "~element-ui/packages/theme-chalk/src/index";
+
+
+/*重定义elementUi 搜索框disable状态下的hover类样式*/
+.el-input-group__append, .el-input-group__prepend{
+  background: $--color-primary;color: #fff;border-color:$--color-primary-light-2;
+  &:hover,
+  &:disabled,
+  &:focus {
+    color: #fff;
+    border-color: $--color-primary-light-2;
+    background-color: $--color-primary-light-2;
+  }
+  .el-button--primary{
+    @include when(disabled) {
+      color: #fff;
+      border-color: $--color-primary-light-2;
+      background-color: $--color-primary-light-2;
+    }
+  }
+}
+
+.special-select.input-with-select .el-input-group__prepend {
+  background-color: #fff;
+  border-color:#dcdfe6;
+  color:#333;
+  &:hover,
+  &:disabled
+  {
+    background: #fff;
+    border-color:#dcdfe6
+  }
+  .el-input--suffix {
+    @include when(disabled) {
+      .el-input__inner{
+        background-color:#f5f7fa;
+        border: 1px  solid #e4e7ed!important;
+      }
+    }
+  }
+}
+
+/*重定义layer them*/
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0 {background: $--color-primary !important;}
+body .layer-ext-moon .layui-layer-btn a{border:1px solid $--color-primary !important;}
+
+/*
+========================================定制element-ui them by guxy @20190117
+*/
+
+/*定制 navpane them */
+.nav-bar {
+  margin-top: 50px;
+  height: 38px;
+  width: 100%;
+  z-index: 8;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);
+  transition: all 0.2s;
+  .nav-bar-tag {
+    height: 26px;
+    color: #495060;
+    margin: 6px 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+    line-height: 26px;
+    border: 1px solid #ebeef5;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    .close-box {
+      display: inline-block;
+      height: 100%;
+      border-left: 1px solid #ebeef5;
+      margin-left: 6px;
+    }
+    &:hover {
+      opacity: 0.85;
+      //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+      //border-color: #3d8dbc;
+    }
+    .point {
+      display: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: auto 0;
+      position: relative;
+      background: #fff;
+    }
+    .el-icon-close {
+      font-weight: bolder;
+      margin-left: 6px;
+      &:hover {
+        color: $--color-danger;
+      }
+    }
+  }
+  .active {
+    border: 1px solid $--color-primary;
+    background: $--color-primary;
+    color: #fff;
+    .point {
+      display: inline-block;
+    }
+  }
+  .scroll-container {
+    flex: 1;
+    height: 100%;
+  }
+}
+
+
+/*定制sidebar them*/
+.header .logo{background:$--color-primary!important;}
+.el-menu{background:$--color-primary!important;}
+.el-submenu__title{color: $--color-primary-light-8!important;background:$--color-primary!important;}
+.el-submenu__title:hover,.el-submenu__title:focus{background:mix($--color-black, $--color-primary, 10%)!important;}
+.el-menu-item{color: $--color-primary-light-8!important;}
+.el-menu-item:hover, .el-menu-item:focus{background:mix($--color-black, $--color-primary, 10%)!important; }
+.el-menu-item i,.el-submenu__title i{color: $--color-primary-light-6}
+#app .aside .nest-menu .el-submenu.is-active > .el-submenu__title, #app .aside .el-submenu.is-active .el-menu-item {
+  background-color: mix($--color-black, $--color-primary, 20%)!important;
+}
+.main .aside .sidebar-toggle{
+  background:$--color-primary!important;
+  :hover{
+    background:mix($--color-black, $--color-primary, 10%)!important;
+  }
+}
+
+/*login*/
+.login{
+  background:mix($--color-black, $--color-primary, 10%)!important;
+  .login-form{background:$--color-primary-light-9}
+}
+
