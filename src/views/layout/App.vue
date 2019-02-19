@@ -115,7 +115,9 @@
                      class="main-container">
                     <transition name="fade">
                     <el-card class="box-card">
-                        <router-view></router-view>
+                        <keep-alive>
+                            <router-view></router-view>
+                        </keep-alive>
                     </el-card>
                     </transition>
                 </div>

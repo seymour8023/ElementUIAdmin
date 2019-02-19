@@ -3,20 +3,13 @@ import Router from 'vue-router'
 import Personal from './personal'
 
 Vue.use(Router)
-const layout = () => import(/* webpackChunkName: "layout" */ '@/views/layout/App.vue')
-const Dashboard = () => import(/* webpackChunkName: "Dashboard" */ '@/views/home/Index.vue')
-const FontAwesome = () => import(/* webpackChunkName: "FontAwesome" */ '@/views/icon/FontAwesome.vue')
-const ElementIcon = () => import(/* webpackChunkName: "ElementIcon" */ '@/views/icon/ElementIcon.vue')
-const PostManage = () => import(/* webpackChunkName: "PostManage" */ '@/views/contentManage/Index.vue')
-const addManage = () => import(/* webpackChunkName: "addManage" */ '@/views/contentManage/iframetext.vue')
 
 let RouteList = [
   {
     path: '/',
-    component: layout,
+    component: r => require.ensure([], () => r(require('@/views/layout/App.vue')), 'layout'),
     meta: {
       title: '首页',
-      keepAlive: false,
     },
     children: [
       {
@@ -24,52 +17,46 @@ let RouteList = [
         name: 'Dashboard',
         meta: {
           title: '首页',
-          keepAlive: false
         },
-        component: Dashboard,
+        component: r => require.ensure([], () => r(require('@/views/home/Index.vue')), 'Dashboard'),
       },
       {
         path: '/font_awesome',
         name: 'FontAwesome',
         meta: {
           title: 'FontAwesome 图标',
-          keepAlive: false
         },
-        component: FontAwesome,
+        component: r => require.ensure([], () => r(require('@/views/icon/FontAwesome.vue')), 'FontAwesome'),
       },
       {
         path: '/element_icon',
         name: 'ElementIcon',
         meta: {
           title: 'Element 图标',
-          keepAlive: false
         },
-        component: ElementIcon,
+        component: r => require.ensure([], () => r(require('@/views/icon/ElementIcon.vue')), 'ElementIcon'),
       },
       {
         path: '/post_manage',
         name: 'PostManage',
         meta: {
           title: '文章管理',
-          keepAlive: false
         },
-        component: PostManage,
+        component: r => require.ensure([], () => r(require('@/views/contentManage/Index.vue')), 'PostManage'),
       },
       {
           path: '/add_manage',
           name: 'addManage',
           meta: {
               title: '文章添加',
-              keepAlive: false
           },
-          component: addManage,
+          component: r => require.ensure([], () => r(require('@/views/contentManage/iframetext.vue')), 'addManage'),
       },
       {
         path: '/user_manage',
         name: 'UserManage',
         meta: {
           title: '用户列表',
-          keepAlive: true
         },
         component: r => require.ensure([], () => r(require('@/views/userManage/Index.vue')), 'UserManage'),
       },
@@ -78,7 +65,6 @@ let RouteList = [
         name: 'CategoryManage',
         meta: {
           title: '分类列表',
-          keepAlive: true
         },
         component: r => require.ensure([], () => r(require('@/views/categoryManage/Index.vue')), 'CategoryManage'),
 
@@ -88,7 +74,6 @@ let RouteList = [
         name: 'RoleManage',
         meta: {
           title: '角色列表',
-          keepAlive: true
         },
         component: r => require.ensure([], () => r(require('@/views/permissionManage/role/Role.vue')), 'RoleManage'),
       },
@@ -97,7 +82,7 @@ let RouteList = [
         name: 'PermissionList',
         meta: {
           title: '权限列表',
-          keepAlive: true
+
         },
         component: r => require.ensure([], () => r(require('@/views/permissionManage/permission/Index.vue')), 'PermissionList'),
       },
@@ -110,7 +95,6 @@ let RouteList = [
     name: 'Login',
     meta: {
       title: '后台登录',
-      keepAlive: false
     },
     components: {
       blank: r => require.ensure([], () => r(require('@/views/login/Login.vue')), 'Login'),
@@ -125,7 +109,6 @@ RouteList[0].children.push({
   name: 'BuildCode',
   meta: {
     title: '构建代码',
-    keepAlive: true
   },
   component: r => require.ensure([], () => r(require('@/views/developmentTool/Build.vue')), 'BuildCode'),
 });

@@ -138,6 +138,7 @@
 <script>
     import {mapGetters} from 'vuex'
     export default {
+
         name: 'Dashboard',
         data() {
             return {
@@ -172,7 +173,13 @@
 
         },
         mounted(){
-            console.log($)
+            layer.open({
+                type: 2,
+                title: '欢迎页',
+                maxmin: true,
+                area: ['800px', '500px'],
+                content: 'http://layer.layui.com/test/welcome.html',
+            });
         }
     }
 </script>

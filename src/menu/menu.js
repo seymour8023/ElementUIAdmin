@@ -105,7 +105,7 @@ PermissionManage.permission = {
 
 export default menu;
 
-if(process.env.NODE_ENV=='development'){
+
 
   menu.development_tools = {
     name: '开发工具',
@@ -120,4 +120,4 @@ if(process.env.NODE_ENV=='development'){
     path: '/build_code',
   };
 
-}
+

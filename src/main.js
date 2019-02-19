@@ -12,6 +12,12 @@ import Function from './utils/'
 import VueSlimScroll from 'vue-slimscroll'
 Vue.use(VueSlimScroll)
 
+/*这里全局引入了jQuery layer插件*/
+import '@/assets/plugns/jquery/jquery.min.js'
+import '@/assets/plugns/layer/layer.js'
+import '@/assets/plugns/layer/theme/default/layer.css'
+
+
 
 import App from './App.vue'
 Vue.prototype.$Api = Api

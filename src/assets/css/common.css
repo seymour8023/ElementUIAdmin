@@ -53,7 +53,7 @@ body{
 /*element样式重定义*/
 
 .el-table .el-table__body tr:hover>td{ background-color: #f5f7fa!important;  }
-
+.el-card.is-always-shadow{box-shadow: none!important;}
 /*searchcont*/
 .searchcont{background: #f5f7fa;padding: 20px;padding-bottom: 0;border:1px solid #eaeefb;margin-bottom: 20px;border-radius:4px }
 .searchcont .el-select {
